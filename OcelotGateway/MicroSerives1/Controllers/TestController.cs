@@ -5,20 +5,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OcelotGateway.Controllers
+namespace MicroSerives1.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    public class WeatherForecastController : ControllerBase
+    [Route("[controller]")]
+    public class TestController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<TestController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public TestController(ILogger<TestController> logger)
         {
             _logger = logger;
         }
@@ -37,10 +37,10 @@ namespace OcelotGateway.Controllers
         }
 
         [HttpGet]
-        [Route(nameof(IsWork))]
-        public bool IsWork()
+        [Route(nameof(Welcome))]
+        public string Welcome()
         {
-            return true;
+            return $"Tu usługa numer 1. Zgłaszam gotowość.";
         }
     }
 }
